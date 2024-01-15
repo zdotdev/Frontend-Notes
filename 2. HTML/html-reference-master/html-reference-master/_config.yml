@@ -1,0 +1,8 @@
+title: HTML Reference
+subtitle: "A free guide to HTML"
+description: A free guide to all HTML elements and attributes.
+share: "HTML Reference: a free guide to all HTML elements and attributes."
+url: https://htmlreference.io
+markdown: kramdown
+permalink: pretty
+exclude: ['node_modules']

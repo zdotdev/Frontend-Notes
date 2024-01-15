@@ -1,0 +1,156 @@
+.attribute--required
+  .attribute-name
+    .tag
+      background: $red
+      color: $red-invert
+
+.attribute--novalue,
+.attribute--novaluebut
+  .attribute-name
+    .tag
+      background: $purple-light
+
+.attribute-name
+  .tag
+    background: lavender
+    background: #BADBFF
+    // color: $plum
+
+.attribute-is-required
+  color: $red
+  font-size: 0.8em
+
+.attribute-is-novalue
+  color: $purple
+  font-size: 0.8em
+
+.attribute-description
+  font-size: 0.8em
+  line-height: 1.4
+  margin-top: 0.5em
+  a:hover
+    text-decoration: underline
+  code
+    background: $background
+    border-radius: 2px
+    padding: 0 4px 2px
+    position: relative
+    top: -1px
+    vertical-align: baseline
+
+.value-name
+  position: relative
+  .tag
+    background: $yellow
+    // color: $yellow-invert
+    background: #DEFF82
+    &:before
+      bottom: 50%
+      left: 100%
+      transform: translateX(0) translateY(50%)
+    &:after
+      color: #000
+      content: "="
+      font-weight: $weight-normal
+      margin-right: 0.5em
+      opacity: 0.5
+      pointer-events: none
+      position: absolute
+      right: 100%
+      top: 0
+    &:hover:before
+      transform: translateX(4px) translateY(50%)
+
+.value-header
+  padding-left: 1rem
+
+.value-name
+  margin-bottom: 0.5em
+
+.value-description
+  color: $text-light
+  font-size: 0.7em
+  line-height: 1.4
+  a:hover
+    text-decoration: underline
+  strong
+    color: inherit
+  p,
+  pre
+    margin-bottom: 0.5em
+    &:last-child
+      margin-bottom: 0
+  code
+    background: $background
+    border-radius: 2px
+    padding: 0 4px 2px
+    position: relative
+    top: -1px
+    vertical-align: baseline
+  pre
+    background: none
+    font-size: 12px
+    line-height: 1.6
+    overflow: auto
+    padding: 1em
+    max-width: 100%
+    code
+      background: none
+      padding: 0
+      position: static
+
+.value-preview
+  font-size: 14px
+
+.value-output
+  a
+    text-decoration: underline
+  fieldset
+    padding: 0.5em 1em 1em
+  iframe
+    border: inset 2px $border
+
++mobile
+  .attribute
+    margin-top: 2rem
+    padding: 0 2rem
+  .value
+    margin-top: 1rem
+  .value-preview
+    margin-top: 0.5rem
+    padding-left: 1rem
+
++desktop
+  .attribute
+    display: flex
+    margin-top: 2rem
+    padding: 0 3rem
+  .attribute-header
+    flex-grow: 0
+    flex-shrink: 0
+    padding-right: 1rem
+    width: 20%
+  .attribute-values
+    flex-grow: 1
+    flex-shrink: 1
+    width: 80%
+  .value
+    display: flex
+  .value + .value
+    margin-top: 1rem
+  .value--example
+    margin-top: 0.5rem !important
+  .value-header
+    flex-grow: 1
+    flex-shrink: 1
+    padding-right: 2rem
+  .value-preview
+    flex-shrink: 0
+    width: 30%
+  .attribute--novalue
+    .attribute-header
+      width: 76%
+    .value-header
+      display: none
+    .value-preview
+      width: 100%

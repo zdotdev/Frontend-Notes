@@ -1,0 +1,141 @@
+.finder
+  position: relative
+  .menu-search
+    input
+      font-size: 1rem
+
+.finder-list
+  &.is-searching
+    .finder-item
+      display: none
+      &.is-highlighted:not(.is-hidden)
+        display: block
+      &.is-selected
+        display: block
+
+.finder-item
+  align-items: stretch
+  cursor: pointer
+  justify-content: space-between
+  position: relative
+  &.is-hidden
+    display: none
+  &.is-selected
+    z-index: 1
+    .finder-item-link
+      &,
+      &:hover
+        background: $primary
+        color: $primary-invert
+
+.finder-item-link
+  display: block
+  padding: 0.25rem 1rem
+  transition: none
+  &:visited
+    color: $purple
+  &:hover
+    background: $background
+  .highlight
+    background: $yellow
+    color: $yellow-invert
+  .light--experimental
+    margin-left: 4px
+    position: relative
+    top: -1px
+
+.finder-item-meta
+  align-items: center
+  bottom: 0
+  display: flex
+  justify-content: flex-end
+  pointer-events: none
+  position: absolute
+  right: 0
+  top: 0
+
+.finder-checkboxes
+  display: flex
+  .light
+    align-items: center
+    display: flex
+    justify-content: flex-start
+
+.light
+  border-radius: 2px
+  color: rgba(0,0,0,0.48)
+  font-size: 0.8em
+  font-weight: normal
+  line-height: 1.2
+  opacity: 0.5
+  padding: 2px 4px
+  text-transform: lowercase
+  white-space: nowrap
+
+label.light
+  cursor: pointer
+  input
+    cursor: pointer
+    margin-right: 4px
+
+.light--experimental
+  background-color: $yellow
+  color: $yellow-invert
+  opacity: 1
+
+.light--meta
+  .finder-item--meta &,
+  &.is-active
+    background-color: rgba($purple, 0.29)
+    color: $text-strong
+    opacity: 1
+
+.light--inline
+  .finder-item--inline &,
+  &.is-active
+    background-color: rgba($green, 0.29)
+    color: $text-strong
+    opacity: 1
+
+.light--block
+  .finder-item--block &,
+  &.is-active
+    background-color: rgba($blue, 0.29)
+    color: $text-strong
+    opacity: 1
+
+.light--selfclosing
+  .finder-item--selfclosing &,
+  &.is-active
+    background-color: rgba($red, 0.29)
+    color: $text-strong
+    opacity: 1
+
++mobile
+  .finder
+    padding-bottom: 1rem
+  .finder-checkboxes
+    flex-wrap: wrap
+    padding: 0 1rem
+    .light
+      margin-bottom: 0.5em
+      margin-right: 0.5em
+  .finder-item-link
+    .light--experimental
+      display: none
+  .finder-item-meta
+    padding-right: 0.5rem
+    .light
+      margin-left: 2px
+
++desktop
+  .finder
+    padding-bottom: 3rem
+  .finder-checkboxes
+    padding: 0 1rem 1rem
+    .light
+      margin-right: 4px
+  .finder-item-meta
+    padding: 0 1em
+    .light
+      margin-left: 4px

@@ -1,0 +1,67 @@
+<aside class="menu">
+  <a id="logo" class="menu-logo" href="{{site.url}}">
+    <img src="{{site.url}}/images/html-reference-logo.png" alt="{{site.title}} logo">
+  </a>
+  <nav class="menu-collections">
+    <p><strong>HTML Elements</strong></p>
+    <ul>
+      <li><a class="menu-collection-link{% if page.route == 'index' %} menu-collection-link--active{% endif %}" href="{{site.url}}">All</a></li>
+      <li><a class="menu-collection-link{% if page.collection_name == 'Base elements' %} menu-collection-link--active{% endif %}" href="{{site.url}}/base/">Base</a></li>
+      <li><a class="menu-collection-link{% if page.collection_name == 'Forms' %} menu-collection-link--active{% endif %}" href="{{site.url}}/forms/">Forms</a></li>
+      <li><a class="menu-collection-link{% if page.collection_name == 'Lists' %} menu-collection-link--active{% endif %}" href="{{site.url}}/lists/">Lists</a></li>
+      <li><a class="menu-collection-link{% if page.collection_name == 'Semantic' %} menu-collection-link--active{% endif %}" href="{{site.url}}/semantic/">Semantic</a></li>
+      <li><a class="menu-collection-link{% if page.collection_name == 'Tables' %} menu-collection-link--active{% endif %}" href="{{site.url}}/tables/">Tables</a></li>
+    </ul>
+    <!-- <p><strong>HTML Templates</strong></p>
+    <ul>
+      <li><a class="menu-collection-link{% if page.template_name == 'Content' %} menu-collection-link--active{% endif %}" href="{{site.url}}/templates/content/">Content</a></li>
+      <li><a class="menu-collection-link{% if page.template_name == 'Forms' %} menu-collection-link--active{% endif %}" href="{{site.url}}/templates/forms/">Forms</a></li>
+      <li><a class="menu-collection-link{% if page.template_name == 'Tables' %} menu-collection-link--active{% endif %}" href="{{site.url}}/templates/table/">Tables</a></li>
+    </ul>
+    <p><strong><a class="menu-collection-link" href="{{site.url}}/html-global-attributes/">Global attributes</a></strong></p> -->
+  </nav>
+  {% if page.route != "index" %}
+    <nav id="menu-nav" class="menu-nav">
+      <div class="menu-search">
+        <input id="menu-search-input" type="search" autocomplete="off" placeholder="Search for an element">
+        <i class="icon is-search"></i>
+      </div>
+      <div id="menu-list" class="menu-list">
+        <ul id="menu-list-ul" class="menu-list-ul">
+          {% if page.menu_list && page.layout == "collection" %}
+            {% include collections/{{page.menu_list}}.html %}
+          {% else %}
+            {% include lists/menu-list.html %}
+          {% endif %}
+        </ul>
+        <i id="menu-shadow-top" class="menu-list-shadow is-top"></i>
+        <i id="menu-shadow-bottom" class="menu-list-shadow is-bottom"></i>
+      </div>
+      <a id="menu-nav-close" class="menu-close">
+        <i class="icon is-close"></i>
+        <strong>Close</strong>
+      </a>
+    </nav>
+  {% endif %}
+  <footer class="menu-hello">
+    {% include carbon.html %}
+  </footer>
+</aside>
+
+<footer class="footer">
+  <p class="footer-title">
+    <strong>{{site.subtitle}}</strong> <small>Created by <a href="https://twitter.com/jgthms">@jgthms</a></small>
+  </p>
+  <p class="footer-share footer-share--social">
+    <strong class="footer-share-label">Share</strong>
+    {% include social/button-twitter.html %}
+    {% include social/button-facebook.html %}
+    <a id="menu-nav-open" class="footer-share-nav">Menu</a>
+  </p>
+  <div class="footer-facebook">
+    {% include social/iframe-facebook.html %}
+  </div>
+  <div class="footer-github">
+    {% include social/iframe-github.html %}
+  </div>
+</footer>

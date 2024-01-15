@@ -1,0 +1,196 @@
+{
+  "main": {
+    "id": "2d5454f4315a7b47",
+    "type": "split",
+    "children": [
+      {
+        "id": "69bc348533792b68",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a204daa9e03b548c",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "5. Version Control System/img/Pasted image 20240114130051.png"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b7bb0a4b451f87bc",
+    "type": "split",
+    "children": [
+      {
+        "id": "d37e4f849c4b3f72",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7e456a0af7f00a77",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "208fd624ecf97bec",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f046f0fca4ade393",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e0ec6b26aa24c797",
+    "type": "split",
+    "children": [
+      {
+        "id": "5febc51b4e85eec7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7da44ee0ba05ffff",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "5. Version Control System/img/Pasted image 20240114130051.png",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "761987379efcbe8f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "5. Version Control System/img/Pasted image 20240114130051.png",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "da3e9590dcbba310",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "a017d5f2e2a40605",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "5. Version Control System/img/Pasted image 20240114130051.png"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "7e456a0af7f00a77",
+  "lastOpenFiles": [
+    "6. Package Managers/Package Manager.md",
+    "5. Version Control System/Git.md",
+    "9. Writing CSS/Tailwind Css Documentation.md",
+    "4. JavaScript/Learn the Basics.md",
+    "6. Package Managers",
+    "5. Version Control System/img/Pasted image 20240114130051.png",
+    "Untitled.md",
+    "3. CSS/CSS Elements/CSS Elements.md",
+    "5. Version Control System",
+    "4. JavaScript/img/Pasted image 20231112215659.png",
+    "4. JavaScript/img/Pasted image 20231112211504.png",
+    "9. Writing CSS/Bootstrap.md",
+    "9. Writing CSS",
+    "4. JavaScript/img/Pasted image 20231103184015.png",
+    "3. CSS/CSS Elements/css sub elements/border-right-width..4px;.md",
+    "2. HTML/HTML Elements/HTML Elements.md",
+    "2. HTML/2. Writing Semantic HTML.md",
+    "2. HTML/0. HTML.md",
+    "2. HTML/3. Forms and Validations.md",
+    "4. JavaScript/img/Pasted image 20231102172101.png",
+    "4. JavaScript/img",
+    "2. HTML/img/Pasted image 20231101195107.png",
+    "2. HTML/Accessibility.md",
+    "2. HTML/HTML Elements/sub elements/name.md",
+    "2. HTML/Void elements.md",
+    "2. HTML/HTML Elements/sub elements/allowfullscreen.md",
+    "3. CSS/CSS Elements/css sub elements/background-image..linear-gradient(red, blue);.md",
+    "3. CSS/CSS Elements/css sub elements/background-image..linear-gradient(45deg, red, blue);.md",
+    "3. CSS/CSS Elements/css sub elements/background-image..radial-gradient(green, purple);.md",
+    "2. HTML/1. Learn the basics.md",
+    "2. HTML/html-reference-master/html-reference-master/_includes/social/button-facebook.html",
+    "2. HTML/html-reference-master/html-reference-master/_includes/_static/menu-list.html",
+    "2. HTML/html-reference-master/html-reference-master/_includes/svg/twitter.html",
+    "2. HTML/html-reference-master/html-reference-master/_includes/_static/main-list.html",
+    "2. HTML/html-reference-master/html-reference-master/_includes/svg/facebook.html",
+    "2. HTML/html-reference-master/html-reference-master/_includes/svg/github.html",
+    "2. HTML/html-reference-master/html-reference-master/images/world-continents.png",
+    "2. HTML/html-reference-master/html-reference-master/images/traffic.jpg",
+    "2. HTML/html-reference-master/html-reference-master/images/tiramisu.jpg",
+    "2. HTML/html-reference-master/html-reference-master/images/sunset.jpg",
+    "2. HTML/html-reference-master/html-reference-master/README.md",
+    "html-reference-master/html-reference-master/README.md",
+    "3. CSS/css-reference-master/css-reference-master/README.md",
+    "css-reference-master/css-reference-master/README.md",
+    "3. CSS/CSS Elements/css sub elements/display..table-row;.md",
+    "3. CSS/CSS Elements/css sub elements/font-weight..normal;.md"
+  ]
+}
