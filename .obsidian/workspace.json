@@ -4,16 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "69bc348533792b68",
+        "id": "ffc124218a2b48bb",
         "type": "tabs",
         "children": [
           {
-            "id": "a204daa9e03b548c",
+            "id": "47820bae4d7b94ea",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "5. Version Control System/img/Pasted image 20240114130051.png"
+                "file": "6. Package Managers/Package Manager.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -67,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "e0ec6b26aa24c797",
@@ -83,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "5. Version Control System/img/Pasted image 20240114130051.png",
+                "file": "6. Package Managers/Package Manager.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "5. Version Control System/img/Pasted image 20240114130051.png",
+                "file": "6. Package Managers/Package Manager.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "5. Version Control System/img/Pasted image 20240114130051.png"
+                "file": "6. Package Managers/Package Manager.md"
               }
             }
           }
@@ -144,14 +147,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7e456a0af7f00a77",
+  "active": "47820bae4d7b94ea",
   "lastOpenFiles": [
-    "6. Package Managers/Package Manager.md",
-    "5. Version Control System/Git.md",
     "9. Writing CSS/Tailwind Css Documentation.md",
+    "6. Package Managers/Package Manager.md",
+    "5. Version Control System/img/Pasted image 20240114130051.png",
+    "5. Version Control System/Git.md",
     "4. JavaScript/Learn the Basics.md",
     "6. Package Managers",
-    "5. Version Control System/img/Pasted image 20240114130051.png",
     "Untitled.md",
     "3. CSS/CSS Elements/CSS Elements.md",
     "5. Version Control System",
@@ -190,7 +193,6 @@
     "html-reference-master/html-reference-master/README.md",
     "3. CSS/css-reference-master/css-reference-master/README.md",
     "css-reference-master/css-reference-master/README.md",
-    "3. CSS/CSS Elements/css sub elements/display..table-row;.md",
-    "3. CSS/CSS Elements/css sub elements/font-weight..normal;.md"
+    "3. CSS/CSS Elements/css sub elements/display..table-row;.md"
   ]
 }
