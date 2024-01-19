@@ -41,6 +41,7 @@ So now, you have to import the bundle to the html.
 ```
 
 
+# Execution Policy Error
 **Note:** to fix Digitally undefined error in visual studio code, run this -
 Use this to show list: `Get-ExecutionPolicy -List`
 Use this to bypass execpol: `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
