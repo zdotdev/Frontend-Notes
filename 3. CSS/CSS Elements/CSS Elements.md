@@ -13,6 +13,120 @@ padding: 0;
 }
 ```
 
+
+# Media Query
+## @media screen size
+This will change the whole system sizing according to the user device.
+
+**max width: Desktop first approach**
+```css
+@media only screen and (max-width: 1600px) {
+
+}
+```
+
+**min-width: Mobile first approach(commonly used in css frameworks)**
+```css
+@media only screen and (min-width: 480px) {
+
+}
+```
+## @media preference
+It will change the css styles according to the system theme the user is using:
+
+**Light Mode**
+```css
+@media (prefers-color-scheme: light) {
+
+  :root {
+
+    color: #213547;
+
+    background-color: #ffffff;
+
+  }
+
+  a:hover {
+
+    color: #747bff;
+
+  }
+
+  button {
+
+    background-color: #f9f9f9;
+
+  }
+
+}
+```
+
+**Dark Mode**
+```css
+@media (prefers-color-scheme: dark) {
+
+  :root {
+
+    color: #213547;
+
+    background-color: #ffffff;
+
+  }
+
+  a:hover {
+
+    color: #747bff;
+
+  }
+
+  button {
+
+    background-color: #f9f9f9;
+
+  }
+
+}
+```
+
+## @keyframes
+This is use to create a custom effects in CSS. It can manipulate the transitions, animations, and effects of an element. [CSS Animation](obsidian://open?vault=Front-End&file=3.%20CSS%2FCSS%20Animation%2FCSS%20Animation)
+```css
+.name{
+
+  animation: name 2s ease-in forwards 3;
+
+}
+
+  
+
+@keyframes name{
+
+  0%{
+
+    transform: translateX(-20rem);
+
+    color: white;
+
+  }
+
+  50%{
+
+    transform: translateX(0%);
+
+    color: black;
+
+  }
+
+  100%{
+
+    transform: translateX(-20rem);
+
+    color: white;
+
+  }
+
+}
+```
 # align-content
 Defines how each line is aligned within a flexbox/grid container. It only applies if `flex-wrap: wrap` is present, and if there are **multiple lines** of flexbox/grid items.
 
