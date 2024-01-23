@@ -1,0 +1,208 @@
+:root {
+  --color-primary: #29042f;
+  --color-primary-light: #660a76;
+  --color-secondary: #b80867;
+  --color-secondary-light: #ff6671;
+  --color-accent: #f19c5f;
+  --color-neutral-white: #faedef;
+  --color-neutral-black: #1a1a1a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.flow-content > * + * {
+  margin-top: 3rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:is(h1, h2, h3, p, figure, body) {
+  margin: 0;
+  padding: 0;
+  color: var(--color-neutral-white);
+}
+
+body {
+  background: linear-gradient(
+    -45deg,
+    var(--color-primary) 0%,
+    var(--color-primary-light) 44.79%,
+    var(--color-secondary-light) 99.48%
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+img {
+  width: min(40rem, 100%);
+  object-fit: contain;
+  border-radius: 1rem;
+}
+
+.container {
+  width: min(100rem, 100%);
+  margin: 0 auto;
+  position: relative;
+}
+
+.container::before {
+  content: '';
+  width: 10rem;
+  aspect-ratio: 1/1;
+  border-radius: 10%;
+  display: block;
+  position: absolute;
+  background: var(--color-secondary);
+  left: 0;
+  top: 50%;
+  box-shadow: 0 0 5rem #ff4754, 0 0 10rem #ff4754, 0 0 15rem #ff4754;
+}
+
+.container::after {
+  content: '';
+  width: 10rem;
+  aspect-ratio: 1/1;
+  border-radius: 10%;
+  display: block;
+  position: absolute;
+  background: #01adfd;
+  right: 10%;
+  bottom: 50%;
+  box-shadow: 0 0 5rem #01adfd, 0 0 25rem #01adfd, 0 0 50rem #01adfd,
+    0 0 100rem #01adfd;
+  z-index: -1;
+}
+.container--glass {
+  background: linear-gradient(
+    204.12deg,
+    rgba(255, 255, 255, 0.3) 9.71%,
+    rgba(255, 255, 255, 0) 102.95%
+  );
+  padding: 3rem;
+  border-radius: 1rem;
+
+  background-blend-mode: soft-light;
+  outline: 1px solid hsla(0, 0%, 100%, 0.5);
+  max-width: 100%;
+  backdrop-filter: blur(8rem);
+}
+
+.d__grid-center {
+  display: grid;
+  place-content: center;
+  align-items: center;
+  min-height: 100vh;
+  grid-template-columns: auto auto;
+  gap: 3rem;
+}
+
+.form__group {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 2rem;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: inherit;
+  /* identical to box height */
+  color: rgba(250, 237, 239, 0.5);
+  padding: 1.5rem 3rem;
+}
+
+.form__input {
+  background: linear-gradient(
+    34.83deg,
+    rgba(255, 255, 255, 0.1) 0.74%,
+    rgba(255, 255, 255, 0.1) 99.93%
+  );
+  border: 1px solid transparent;
+  outline: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(40px);
+  /* Note: backdrop-filter has minimal browser support */
+  padding: 1rem;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  color: #f19c5f;
+  border-radius: 0.5rem;
+}
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  padding: 0.8rem 3.2rem;
+  background: linear-gradient(
+    90deg,
+    rgba(200, 78, 137, 0.1) 0%,
+    rgba(241, 95, 121, 0.1) 100%
+  );
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  color: hsla(351, 57%, 95%, 0.5);
+  font: inherit;
+  font-size: 2rem;
+  font-weight: 700;
+  border: none;
+  outline: 1px solid transparent;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  transition: 200ms ease-in-out;
+  margin-top: 1rem;
+  max-width: fit-content;
+}
+
+.btn__primary {
+  background: linear-gradient(83deg, #ff4754 5.38%, #ff6671 94.08%);
+  color: #fcfcfd;
+}
+
+.btn__primary:hover {
+  box-shadow: 0 0 5px #ff4754, 0 0 25px #ff6671;
+  transform: scale(1.1);
+}
+.btn__link {
+  background: transparent;
+  color: hsla(351, 57%, 95%, 0.5);
+  box-shadow: none;
+}
+
+.btn__link:hover {
+  text-shadow: 0 0 5px #ff4754, 0 0 25px #ff4754;
+  color: #fcfcfd;
+  transform: scale(1.1);
+}
+
+.box {
+  aspect-ratio: 1/1;
+  background: #b80867;
+  border-radius: 1rem;
+  box-shadow: 0 0 5rem #9d134c, 0 0 25rem #9d134c,
+    0 0 50rem var(--color-secondary);
+  width: min(20.5rem, 100%);
+}
+
+p {
+  padding: 1.5rem 3rem;
+}
+
+.animate {
+  transform: scale(1.1);
+}
+
+button::before {
+  content: '🍔';
+  padding: 0 0.5rem 0 0;
+}

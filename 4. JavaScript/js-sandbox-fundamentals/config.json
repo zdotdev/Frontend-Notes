@@ -1,0 +1,6 @@
+{
+  "autoLog": true,
+  "showSingleInlineValue": false,
+  "pro": true,
+  "plugins": ["jsdom-quokka-plugin"]
+}
