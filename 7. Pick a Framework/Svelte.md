@@ -197,5 +197,127 @@ You can also pass event methods inside the elements itself. Just add `|` after t
 
 <h1 on:click | stopPropagation | preventDefault={eventListener}>Click Me</h1>
 ```
-
 [For eventListener options: ](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+
+# Reactive Declaration and Statements
+First is Reactive Declaration. In reactive declaration,  the dollar label `$:`. Dollar label is like a label in JS for loop, but the usage is different. `$:` always executes when the variable that declared inside it is updated. Like if `let a = 1;` has been incremented `a++;`, the `$: b = a * 2` will be executed and the latest value of `a` will be `4`.
+
+**Example:**
+```html
+<script>
+	let a = 1;
+
+  $: multiply = a * 2;
+
+  function increment() {
+
+    a++;
+
+  }
+</script>
+
+<p>Value of a: {a}, Multiplied: {multiply}</p>
+
+<button on:click={increment}>Increment</button>
+```
+
+Reactive Statement is just declaring a statement like `console.log()` or any future statements.
+
+**Example:**
+```html
+<script>
+	let a = 1;
+
+  $: multiply = a * 2;
+  $: console.log('Multiplied');
+
+  function increment() {
+    a++;
+  }
+</script>
+
+<p>Value of a: {a}, Multiplied: {multiply}</p>
+
+<button on:click={increment}>Increment</button>
+```
+
+```html
+<script>
+	let a = 1;
+
+  $: multiply = a * 2;
+  $: calculation = calculate(multiply, 1)
+
+  function increment() {
+
+    a++;
+
+  }
+
+  function calculate(a, b){
+	return a + b;
+  };
+
+</script>
+
+<p>Value of a: {a}, Multiplied: {multiply}, Value of calculate: {calculation}</p>
+
+<button on:click={increment}>Increment</button>
+```
+
+Reactive depends on the value of the dollar label.
+
+The problem in Reactive is when you call the reactive declaration or statement inside the function, the value of the the reactive declaration is outdated.
+
+```html
+<script>
+	let a = 1;
+
+  $: multiply = a * 2;
+  $: calculation = calculate(multiply, 1)
+
+  function increment() {
+    a++;
+	console.log(multiply);
+  }
+
+  function calculate(a, b){
+	return a + b;
+  };
+
+</script>
+
+<p>Value of a: {a}, Multiplied: {multiply}, Value of calculate: {calculation}</p>
+
+<button on:click={increment}>Increment</button>
+```
+ Because svelte will run the code starting from the event, next is to the function that will increment the value of a and will console out the multiply which contains the old value, and next is svelte will update the value of multiply, next is the value will be updated to the screen.
+
+# Tick()
+To update the reactive declaration inside the function, we must use `tick()` function. We have to import `tick()` from svelte.
+```html
+<script>
+	import { tick } from 'svelte';
+	let a = 1;
+
+	$: multiply = a * 2;
+	$: calculation = calculate(multiply, 1)
+
+  function increment() {
+    a++;
+    // Call the tick() function and add the promise
+    tick().then(() => {
+	    console.log(multiply); 
+    })
+  }
+
+  function calculate(a, b){
+	return a + b;
+  };
+
+</script>
+
+<p>Value of a: {a}, Multiplied: {multiply}, Value of calculate: {calculation}</p>
+
+<button on:click={increment}>Increment</button>
+```
