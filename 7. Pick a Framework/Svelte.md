@@ -382,7 +382,9 @@ To import component or props, the first letter of the import name must me capita
   <div class="card">
     <Component name = {name}/>
     // or
-    <Component {name}>
+    <Component {name}/>
+    // or
+    <Component name = "This is name"/>
   </div>
 </main>
 ```
