@@ -347,3 +347,50 @@ If you want to select and edit a specific part or letter in `input` in svelte, w
 <input type="text" on:input={toUpper} {value} />
 ```
 
+It can also be use in monitoring scroll position like if you edit or manipulate or update in some area in the html, it will wait for you to finish updating that area before it restore to the specific scroll position.
+# Component and props
+To import component or props, the first letter of the import name must me capital
+
+**Example:**
+```html
+<script>
+  import Counter from "./lib/Counter.svelte";
+  import EventListener from "./lib/eventListener.svelte";
+  import InputTest from "./lib/input.svelte";
+  let name = "Abdul Jabol";
+</script>
+
+<main>
+  <div class="card">
+    <Counter /> // Component start with Capital letter
+    <EventListener />
+    <InputTest />
+    <h1>{name}</h1> // Elements start with small letter
+  </div>
+</main>
+```
+
+ This is how to past the data from parent to child. It is called `props`.
+**Example:**
+```html
+<script>
+  import Component from "./lib/component.svelte";
+  let name = "Zedrick";
+</script>
+
+<main>
+  <div class="card">
+    <Component name = {name}/>
+    // or
+    <Component {name}>
+  </div>
+</main>
+```
+
+This is the child component:
+```html
+<script>
+export let name;
+</script>
+<h1>{name}</h1>
+```
