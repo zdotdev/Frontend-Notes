@@ -321,3 +321,29 @@ To update the reactive declaration inside the function, we must use `tick()` fun
 
 <button on:click={increment}>Increment</button>
 ```
+
+## Another use of tick:
+If you want to select and edit a specific part or letter in `input` in svelte, when you mark shade it and try to add the new text, the text cursor will automatically go back to the end part of the text. But it you use `tick()`, it wont go to the end because you are manipulating the `dom` itself, not the input you type. The `tick()` function will update the `dom` itself. You must use `async await` function because the purpose of it is to wait if or until you modify the `dom`.
+**Example:**
+```html
+<script>
+
+  import { tick } from "svelte";
+
+  let value = "";
+
+  async function toUpper() {
+    let input = this;
+    let selectionStart = input.selectionStart; // This will keep track of the start of the shaded area of text
+    let selectionEnd = input.selectionEnd; // This will keep the track of the end of the shaded area of text
+    value = input.value.toUpperCase(); // Ignore the error
+
+    await tick(); // This will wait for the dom to be change or manipulated
+
+    input.selectionStart = selectionStart; // this will handle the start of the shaded area of text and the cursor will stay at that point
+    input.selectionEnd = selectionEnd;
+  }
+</script>
+<input type="text" on:input={toUpper} {value} />
+```
+
