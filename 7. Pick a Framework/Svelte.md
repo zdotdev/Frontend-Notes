@@ -440,3 +440,101 @@ This is how to pass multiple props and object to the child:
 <p>{age}</p>
 ```
 **Note:** You don't have to export the `obj` itself, just export the object element.
+# Component Events
+You can pass a function like a `props` in svelte. 
+
+**Example:**
+`app.svelte`
+```html
+<script>
+  import ComponentEvent from "./lib/componentEvent.svelte";
+  let skillVal;
+  function currentSkillInParent(skillCount) {
+    skillVal = skillCount;
+  }
+</script>
+<p>{skillVal}</p>
+```
+`componentEvent.svelte`
+```html
+<script>
+  export let currentSkillInParent;
+  let num = 0;
+  $: currentSkillInParent(num);
+  
+  function increment() {
+    num++;
+  }
+  function decrement() {
+    if (num > 0) {
+      num--;
+    }
+  }
+</script>
+<div style="display: flex; justify-content: center; gap: 2rem">
+  <button on:click={decrement}>-</button>
+  <p>Skill = {num}</p>
+  <button on:click={increment}>+</button>
+</div>
+```
+
+This is how to call the same `component` but ignoring the value of the `currentSkillInParent` function.
+
+**Example:**
+```html
+<script>
+  import ComponentEvent from "./lib/componentEvent.svelte";
+  let skillVal;
+  function currentSkillInParent(skillCount) {
+    skillVal = skillCount;
+  }
+</script>
+<p>{skillVal}</p>
+```
+
+Its either you use the if statement:
+```html
+<script>
+  export let currentSkillInParent;
+  let num = 0;
+  $: if(typeOf currentSkillInParent === "function")
+  currentSkillInParent(num);
+  
+  function increment() {
+    num++;
+  }
+  function decrement() {
+    if (num > 0) {
+      num--;
+    }
+  }
+</script>
+<div style="display: flex; justify-content: center; gap: 2rem">
+  <button on:click={decrement}>-</button>
+  <p>Skill = {num}</p>
+  <button on:click={increment}>+</button>
+</div>
+```
+
+or use the default value method:
+```html
+<script>
+  export let currentSkillInParent = () => {};
+  let num = 0;
+  $: currentSkillInParent(num);
+  
+  function increment() {
+    num++;
+  }
+  function decrement() {
+    if (num > 0) {
+      num--;
+    }
+  }
+</script>
+<div style="display: flex; justify-content: center; gap: 2rem">
+  <button on:click={decrement}>-</button>
+  <p>Skill = {num}</p>
+  <button on:click={increment}>+</button>
+</div>
+```
