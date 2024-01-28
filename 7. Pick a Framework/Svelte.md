@@ -396,3 +396,47 @@ export let name;
 </script>
 <h1>{name}</h1>
 ```
+
+Passing a default value in `props` is like declaring a variable:
+
+**Example:**
+```html
+<script>
+	export let name = 'Default value here'
+</script>
+
+<h1>{name}</h1>
+```
+
+This is how to pass multiple props and object to the child:
+
+**Example:**
+`app.svelte`
+```html
+<script>
+	import Components from "./lib/component.svelte"
+		
+	const obj = {
+		name: 'Zedo',
+		age: 21
+	};
+	
+	let myName = 'Zedrick'
+</script>
+
+<Components {myName} {...obj}/> // You can use spread operator here to export all of the object elements
+
+```
+`components.svelte`
+```html
+<script>
+	export let myName; // exporting local variable
+	export let name; // exporting the name in object
+	export let age; //exporting the age in object
+</script>
+
+<h1>{myName}</h1>
+<h2>{name}</h2>
+<p>{age}</p>
+```
+**Note:** You don't have to export the `obj` itself, just export the object element.
