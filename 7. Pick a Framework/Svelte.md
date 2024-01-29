@@ -580,3 +580,54 @@ Event dispatcher create a custom event in `component.svelte` so the parent can c
 <p>{num}</p>
 <button on:click{increment}>+</button>
 ```
+This will simplify the code above. It makes the event optional, meaning you don't have to add the `function` and the event when calling the `child component`.
+
+**Example:**
+`app.svelte`
+```html
+<script>
+	import ComponentEvent from "./lib/componentEvent.svelte";
+	
+	let skillVal = 0;
+	function currentSkillInParent (event){
+		skillVal = event.detail; // To access the detail in object
+	}
+</script>
+
+<ComponentEvent /> <!-- It is optional if yu want to call it or not -->
+<p>{skillVal}</p>
+```
+# Forwarding component events
+You can't `dispatch` directly from `child.svelte` => `parent.svelte` => `granparent.svelte` to the `app.svelte`. You can dispatch `child.svelte` => `parent.svelte` and the `app.svelte` can access the data form the `child.svelte`.  The process is like the `child.svelte` will pass the dispatch to the `parent.svelte` and it doesn't have to pass the dispatch to the `grandparent.svelte` because it will automatically passed to the `app.svelte`
+
+**Example:**
+`child.svelte`
+```html
+
+```
+
+
+
+
+
+
+
+
+
+Example of basic bubbling
+**Example:**
+`app.svelte`
+```html
+<script>
+function displayDataset(event){
+	console.log(event.target.dataset.value);
+}
+</script>
+
+<div on:click = {displayDataset}>
+	<div>
+		<button data-set="Button 1">Button 1</button>
+		<button data-set="Button 2">Button 2</button>
+	</div>
+</div>
+```
