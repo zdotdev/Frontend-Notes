@@ -603,15 +603,46 @@ You can't `dispatch` directly from `child.svelte` => `parent.svelte` => `granpar
 **Example:**
 `child.svelte`
 ```html
+<script>
+import {createEventDispatcher} from "svelte"
+const dispatcher = createEventDispatcher();
 
+function childButton1(){
+	dispatcher("buttonClicked", "childButton1");
+}
+
+function childButton2(){
+	dispatcher("buttonClicked", "childButton2");
+}
+</script>
+<button on:click = {childButton1}>Child Button 1</button>
+<button on:click = {childButton2}>Child Button 2</button>
 ```
-
-
-
-
-
-
-
+`parent.svelte`
+```html
+<script>
+	import Child from "./lib/fam/child.svelte"
+	
+	function displayDispatch(event){
+		console.log(event.detail);
+	} 
+</script>
+<Child on:buttonClick = {displayDispatch}/>
+```
+`grandparent.svelte`
+```html
+<script>
+	import Parent from "./lib/fam/parent.svelte"
+</script>
+<Parent/>
+```
+`app.svelte`
+```html
+<script>
+	import GrandParent from "./lib/fam/grandparent.svelte"
+</script>
+<GrandParent/>
+```
 
 
 Example of basic bubbling
