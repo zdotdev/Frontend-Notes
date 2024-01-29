@@ -519,7 +519,7 @@ Its either you use the if statement:
 or use the default value method:
 ```html
 <script>
-  export let currentSkillInParent = () => {};
+  export let currentSkillInParent = (event) => {};
   let num = 0;
   $: currentSkillInParent(num);
   
@@ -537,4 +537,46 @@ or use the default value method:
   <p>Skill = {num}</p>
   <button on:click={increment}>+</button>
 </div>
+```
+
+## Using {createEventDispatcher}
+Event dispatcher create a custom event in `component.svelte` so the parent can call that event and use it. It has two parameters, the first param is the `name` of the event and the second is the `data` of that event. It will return an object, the data that we need is in the `datail:` element. The parameter of the function must be `event` to justify the value type.
+
+**Example:**
+`app.svelte`
+```html
+<script>
+	import ComponentEvent from "./lib/componentEvent.svelte";
+	
+	let skillVal = 0;
+	function currentSkillInParent (event){
+		skillVal = event.detail; // To access the detail in object
+	}
+</script>
+
+<ComponentEvent on:skillChange ={currentSkillInParent}/> <!-- Creating custom event -->
+<p>{skillVal}</p>
+```
+
+`component.svelte`
+```html
+<script>
+	import {createEventDispatcher} from "svelte";
+	
+	let num = 0;
+	const dispatcher = createEventDispatcher();
+	$: dispatcher("skillChange", num); // declare two params for the name o event and the data to be pass
+	function incerement(){
+		num++;
+	};
+	function decrement(){
+		if(num > 0){
+			num--;
+		}
+	}
+</script>
+
+<button on:click{decrement}>-</button>
+<p>{num}</p>
+<button on:click{increment}>+</button>
 ```
