@@ -20,3 +20,5 @@ Sample codes are in the JS Sandbox.
 `filter` - `array.filter(function(currentValue, index, arr), thisValue)`
 `map` - `array.map(function(currentValue, index, arr), thisValue)`
 `reduce` - `array.reduce(function(total, currentValue, currentIndex, arr), initialValue)` 
+
+# Folder Structure
