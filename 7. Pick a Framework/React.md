@@ -44,3 +44,66 @@ class Welcome extends React.Component{
 	}
 }
 ```
+
+# Functional Components
+Functional components are just JavaScript functions. it can be use as properties or **`props`** and return `.jsx` which describes the UI.
+
+**Example:**
+`component.jsx`
+```js
+import React from 'react' // This is a must even if you use it or not
+
+function Component(){
+	return(<h1>Hello World!</h1>)
+}
+
+export default Component
+```
+
+`app.jsx`
+```js
+import React from 'react'
+import ComponentOne from './component.jsx'
+
+function App(){
+ return (
+	 <ComponentOne/>
+ )
+}
+
+export default App
+```
+
+`main.jsx`
+```js
+import React from 'react'
+import ReactDOM from 'react-dom/client' // To create root
+import App from './App.jsx'
+import 'index.css' // To import css file
+
+ReactDOM.createroot
+```
+This works perfectly but in React, you must use arrow function:
+
+**Example:**
+`component.jsx`
+```js
+const Component = () => {
+	<h1>My Name is Zedrick</h1>
+}
+export default Component
+```
+This is syntax wise.
+
+Another way to export a component:
+
+**Example:**
+`component.jsx`
+```js
+import React from 'react'
+export const Component = () = {
+	<h1>My name is Zedrick</h1>
+}
+```
+
+`app.jsx`
