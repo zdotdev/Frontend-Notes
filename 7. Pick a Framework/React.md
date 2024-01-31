@@ -24,4 +24,23 @@ Sample codes are in the JS Sandbox.
 # Folder Structure
 Folder structure in `React.js` is hierarchical. 
 # React Components
-You can create multiple components in react for each panel. `root` element in `index.html` imports the `main.jsx` in react. `app.jsx` is the main component and all of the other component is imported into it. The `app.jsx` is imported in `main.jsx`. There are two types of components in react: **Stateless Component** and **Stateful Component**.  **Stateless Component** is a component where other component is imported. **Stateful component** is a component that contains the algorithms and other processes and it is imported to the **Stateless Component**.
+You can create multiple components in react for each panel. `root` element in `index.html` imports the `main.jsx` in react. `app.jsx` is the main component and all of the other component is imported into it. The `app.jsx` is imported in `main.jsx`. There are two types of components in react: **Stateless Component** and **Stateful Component**.  
+**Stateless Component** is a normal JavaScript codes. Assume that we are returning basic html elements. 
+
+**Example:**
+```js
+function myFunction(props){
+	return(`<h1>Name is ${props.name}</h1>`)
+}
+```
+
+**Stateful Component** are regular `ES6` class that extends component class from the react library. Must render the method returning html.
+
+**Example:**
+```js
+class Welcome extends React.Component{
+	render(){
+		return(<h1>Hello, (this.props.name)</h1>)
+	}
+}
+```
