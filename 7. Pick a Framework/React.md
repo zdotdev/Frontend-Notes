@@ -28,7 +28,7 @@ You can create multiple components in react for each panel. `root` element in `i
 **Stateless Component** is a normal JavaScript codes. Assume that we are returning basic html elements. 
 
 **Example:**
-```js
+```jsx
 function myFunction(props){
 	return(`<h1>Name is ${props.name}</h1>`)
 }
@@ -37,7 +37,7 @@ function myFunction(props){
 **Stateful Component** are regular `ES6` class that extends component class from the react library. Must render the method returning html.
 
 **Example:**
-```js
+```jsx
 class Welcome extends React.Component{
 	render(){
 		return(<h1>Hello, (this.props.name)</h1>)
@@ -50,7 +50,7 @@ Functional components are just JavaScript functions. it can be use as properties
 
 **Example:**
 `component.jsx`
-```js
+```jsx
 import React from 'react' // This is a must even if you use it or not
 
 function Component(){
@@ -61,7 +61,7 @@ export default Component
 ```
 
 `app.jsx`
-```js
+```jsx
 import React from 'react'
 import ComponentOne from './component.jsx'
 
@@ -75,7 +75,7 @@ export default App
 ```
 
 `main.jsx`
-```js
+```jsx
 import React from 'react'
 import ReactDOM from 'react-dom/client' // To create root
 import App from './App.jsx'
@@ -87,7 +87,7 @@ This works perfectly but in React, you must use arrow function:
 
 **Example:**
 `component.jsx`
-```js
+```jsx
 const Component = () => {
 	<h1>My Name is Zedrick</h1>
 }
@@ -99,7 +99,7 @@ Another way to export a component:
 
 **Example:**
 `component.jsx`
-```js
+```jsx
 import React from 'react'
 export const Component = () = {
 	<h1>My name is Zedrick</h1>
@@ -107,7 +107,7 @@ export const Component = () = {
 ```
 
 `app.jsx`
-```js
+```jsx
 import React from 'react'
 import { ComponentOne } from './component.jsx' // Use curly when importing direct export
 
@@ -124,7 +124,7 @@ Class component is basically `ES6` classes. Similar to functional component, a c
 
 **Example:**
 `classComponent.jsx`
-```js
+```jsx
 import React, {Component} from 'react' // It must import 2 librarie from react
 
 class Welcome extends Component{ // It must extend the Component library
@@ -161,3 +161,62 @@ JavaScript XML
 # Props (Properties)
 Props is the optional input that your component can accept. It also allows the component to be dynamic.
 
+**Example:**
+`propsComponent.jsx`
+```jsx
+import React from 'react'
+
+// This will return object so access the element with dot
+const NickName = (props) => { // Add parameter to use the imported variable. Name it props as a default but you can name it anything
+	return (
+		<h1>My nickname is {props.name} and my hero name is {props.heroName}</h1>
+	)
+}
+export default NickName
+```
+`App.jsx`
+```jsx
+import React from 'react'
+import PropsComponent from './propsComponent.jsx'
+
+function App(){
+	return(
+		<PropsComponent name = "Zedo" heroName = "Super Mario"/> {/* To pass a variable, declare it in the component */}
+	)
+}
+
+export default App
+```
+
+## Adding a child element inside a component and accessing it
+**Example:**
+`propsComponent.jsx`
+```jsx
+import React from 'react'
+
+// This will return object so access the element with dot
+const NickName = (props) => { // Add parameter to use the imported variable. Name it props as a default but you can name it anything
+	return (
+		<div>
+			<h1>My nickname is {props.name}</h1>
+			{props.children} {/* Accessing the child element */}
+		</div>
+	)
+}
+export default NickName
+```
+`App.jsx`
+```jsx
+import React from 'react'
+import PropsComponent from './propsComponent.jsx'
+
+function App(){
+	return(
+		<PropsComponent name = "Greg" heroName = "Super Mario"> {/* Creating a child element */}
+			<p>Greg is from the beach of Buliasnin.</p>
+		</propsComponent>
+	)
+}
+
+export default App
+```
