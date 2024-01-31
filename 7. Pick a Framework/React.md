@@ -1,4 +1,4 @@
-**What is react?**
+# What is react?
 - Open source JS library.
 - Focus on UI
 - Rich ecosystem
@@ -107,3 +107,57 @@ export const Component = () = {
 ```
 
 `app.jsx`
+```js
+import React from 'react'
+import { ComponentOne } from './component.jsx' // Use curly when importing direct export
+
+function App(){
+	return(
+		<ComponentOne/>
+	)
+}
+export default App
+```
+
+# Class Component
+Class component is basically `ES6` classes. Similar to functional component, a class component also can optionally receive `props` and and return `html`. A class component can maintain an internal state. It can maintain some information which is private to that component. 
+
+**Example:**
+`classComponent.jsx`
+```js
+import React, {Component} from 'react' // It must import 2 librarie from react
+
+class Welcome extends Component{ // It must extend the Component library
+	// Must implements render method which returns null or sum html
+	render(
+		return(<p>Lorem Ipsum</p>)
+	)
+}
+
+export default Welcome
+```
+
+# Functional vs Class components
+## Functional
+- Simple functions
+- Use func components as much as possible
+- Absence of "this" keyword
+- Solution without using state
+- Mainly responsible for the UI
+- Stateless/Dumb/Presentational
+## Class
+- More feature rich
+- Maintain their own private data - state
+- Complex UI logic
+- Provide lifecycle hooks
+- Stateful / Smart / Container
+
+# Hook - Update Components
+Use makes you use state components without adding a class. So State and code similar to lifecycle hooks which are exclusive to class components can now be use to functional components as well. 
+
+# .JSX
+JavaScript XML
+
+# Props (Properties)
+Props is the optional input that your component can accept. It also allows the component to be dynamic.
+
