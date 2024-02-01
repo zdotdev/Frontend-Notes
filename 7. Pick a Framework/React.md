@@ -188,6 +188,7 @@ export default App
 ```
 
 ## Adding a child element inside a component and accessing it
+### Using functional componet
 **Example:**
 `propsComponent.jsx`
 ```jsx
@@ -218,3 +219,37 @@ function App(){
 
 export default App
 ```
+
+### Using class component
+In class component, you don't have to declare a parameter `props` to call the `props` itself. The `props` keyword is exclusive to class component. What you have to use is `this` keyword. 
+
+**Example:**
+`propsComponent.jsx`
+```jsx
+import React, { Component } from 'react'
+
+class Nickname extends Component{ //You dont have to add the props parameter
+	render(){
+		return (
+			<div>
+				<h1>My nickname is {this.props.name}. My hero name is {this.props.heroName}.</h1> {/*Use this keyword in using props in classes*/}
+				{this.props.children}
+			</div>
+		)
+	}
+}
+export default Nickname
+```
+
+`App.jsx`
+```jsx
+import React from 'react'
+import Nickname from './propsComponent.jsx'
+
+function App(){
+	<Nickname name = "Greg" heroName = "Rock man">
+		<p>Greg is from the beach of Buliasnin.</p>
+	</Nickname>
+}
+```
+
