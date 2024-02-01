@@ -109,11 +109,11 @@ export const Component = () = {
 `app.jsx`
 ```jsx
 import React from 'react'
-import { ComponentOne } from './component.jsx' // Use curly when importing direct export
+import { Component } from './component.jsx' // Use curly when importing direct export. The name must be the same in the export name
 
 function App(){
 	return(
-		<ComponentOne/>
+		<Component/>
 	)
 }
 export default App
@@ -167,21 +167,20 @@ Props is the optional input that your component can accept. It also allows the c
 import React from 'react'
 
 // This will return object so access the element with dot
-const NickName = (props) => { // Add parameter to use the imported variable. Name it props as a default but you can name it anything
+export const Nickname = (props) => { // Add parameter to use the imported variable. Name it props as a default but you can name it anything
 	return (
 		<h1>My nickname is {props.name} and my hero name is {props.heroName}</h1>
 	)
 }
-export default NickName
 ```
 `App.jsx`
 ```jsx
 import React from 'react'
-import PropsComponent from './propsComponent.jsx'
+import {Nickname} from './propsComponent.jsx' // The name for the import must be same for the return varaible name
 
 function App(){
 	return(
-		<PropsComponent name = "Zedo" heroName = "Super Mario"/> {/* To pass a variable, declare it in the component */}
+		<Nickname name = "Zedo" heroName = "Super Mario"/> {/* To pass a variable, declare it in the component */}
 	)
 }
 
@@ -195,7 +194,7 @@ export default App
 import React from 'react'
 
 // This will return object so access the element with dot
-const NickName = (props) => { // Add parameter to use the imported variable. Name it props as a default but you can name it anything
+export const Nickname = (props) => { // Add parameter to use the imported variable. Name it props as a default but you can name it anything
 	return (
 		<div>
 			<h1>My nickname is {props.name}</h1>
@@ -203,18 +202,17 @@ const NickName = (props) => { // Add parameter to use the imported variable. Nam
 		</div>
 	)
 }
-export default NickName
 ```
 `App.jsx`
 ```jsx
 import React from 'react'
-import PropsComponent from './propsComponent.jsx'
+import {Nickname} from './propsComponent.jsx'
 
 function App(){
 	return(
-		<PropsComponent name = "Greg" heroName = "Super Mario"> {/* Creating a child element */}
+		<Nickname name = "Greg" heroName = "Super Mario"> {/* Creating a child element */}
 			<p>Greg is from the beach of Buliasnin.</p>
-		</propsComponent>
+		</Nickname>
 	)
 }
 
