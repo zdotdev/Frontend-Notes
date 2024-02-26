@@ -1,4 +1,9 @@
 # Basic commands
+
+[Proper commit message](https://www.conventionalcommits.org/en/v1.0.0/)
+
+**git config --global init.defaultBranch main/master** - to change your default branch name, either `master` or `main`
+
 **git init** - Initialize Local Git Repositor
 
 **git add <'file'>** - Add file(s) to index
